@@ -1,16 +1,45 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { LocalizedVerb } from "../types/verb";
-import { InfinitiveDisplay } from "./InfinitiveDisplay";
+import { PealimLink } from "./PealimLink";
 
 interface VerbOverviewProps {
   verbs: LocalizedVerb[];
+  currentVerbId?: string;
+  onSelectVerb: (verbId: string) => void;
   onClose: () => void;
 }
 
-export function VerbOverview({ verbs, onClose }: VerbOverviewProps) {
+function matchesSearch(verb: LocalizedVerb, query: string): boolean {
+  const normalized = query.trim().toLowerCase();
+  if (!normalized) return true;
+
+  const infinitive = verb.forms.infinitive.he[0] ?? "";
+  return (
+    verb.lemma.toLowerCase().includes(normalized) ||
+    infinitive.includes(normalized) ||
+    verb.id.toLowerCase().includes(normalized)
+  );
+}
+
+export function VerbOverview({ verbs, currentVerbId, onSelectVerb, onClose }: VerbOverviewProps) {
   const { t } = useTranslation();
-  const sorted = [...verbs].sort((a, b) => a.lemma.localeCompare(b.lemma, undefined, { sensitivity: "base" }));
+  const [search, setSearch] = useState("");
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  const sorted = useMemo(
+    () => [...verbs].sort((a, b) => a.lemma.localeCompare(b.lemma, undefined, { sensitivity: "base" })),
+    [verbs],
+  );
+
+  const filtered = useMemo(
+    () => sorted.filter((verb) => matchesSearch(verb, search)),
+    [sorted, search],
+  );
+
+  useEffect(() => {
+    searchRef.current?.focus();
+  }, []);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -19,6 +48,11 @@ export function VerbOverview({ verbs, onClose }: VerbOverviewProps) {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [onClose]);
+
+  const countLabel =
+    search.trim().length > 0
+      ? t("verbOverviewFilteredCount", { filtered: filtered.length, total: sorted.length })
+      : t("verbOverviewCount", { count: sorted.length });
 
   return (
     <div className="verb-overview-backdrop" onClick={onClose} role="presentation">
@@ -35,20 +69,43 @@ export function VerbOverview({ verbs, onClose }: VerbOverviewProps) {
             ×
           </button>
         </header>
-        <p className="verb-overview-count">
-          {t("verbOverviewCount", { count: sorted.length })}
-        </p>
+        <div className="verb-overview-toolbar">
+          <input
+            ref={searchRef}
+            type="search"
+            className="verb-overview-search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={t("verbOverviewSearchPlaceholder")}
+            aria-label={t("verbOverviewSearchPlaceholder")}
+          />
+          <p className="verb-overview-count">{countLabel}</p>
+          <p className="verb-overview-hint">{t("verbOverviewHint")}</p>
+        </div>
         <ul className="verb-overview-list">
-          {sorted.map((verb) => (
-            <li key={verb.id} className="verb-overview-item">
-              <span className="verb-overview-lemma">{verb.lemma}</span>
-              <InfinitiveDisplay
-                hebrew={verb.forms.infinitive.he[0]}
-                pealimUrl={verb.pealimUrl}
-                pealimLabel={t("openOnPealim")}
-              />
-            </li>
-          ))}
+          {filtered.length === 0 ? (
+            <li className="verb-overview-empty">{t("verbOverviewNoResults")}</li>
+          ) : (
+            filtered.map((verb) => (
+              <li
+                key={verb.id}
+                className={`verb-overview-item${verb.id === currentVerbId ? " verb-overview-item--active" : ""}`}
+              >
+                <button
+                  type="button"
+                  className="verb-overview-select"
+                  onClick={() => onSelectVerb(verb.id)}
+                  aria-current={verb.id === currentVerbId ? "true" : undefined}
+                >
+                  <span className="verb-overview-lemma">{verb.lemma}</span>
+                  <span className="hebrew infinitive-he" dir="rtl" lang="he">
+                    {verb.forms.infinitive.he[0]}
+                  </span>
+                </button>
+                <PealimLink url={verb.pealimUrl} label={t("openOnPealim")} />
+              </li>
+            ))
+          )}
         </ul>
       </div>
     </div>

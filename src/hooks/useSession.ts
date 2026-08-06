@@ -27,22 +27,26 @@ export interface SessionState {
   totalConjugationForms: number;
 }
 
+function createSession(verb: LocalizedVerb): SessionState {
+  const conjugationKeys = Object.keys(verb.forms).filter((k) => k !== "infinitive");
+
+  return {
+    verb,
+    phase: "infinitive",
+    conjugationQueue: shuffle(conjugationKeys),
+    currentFormKey: null,
+    completedFormKeys: [],
+    feedback: null,
+    attemptId: 0,
+    totalConjugationForms: conjugationKeys.length,
+  };
+}
+
 export function useSession(verbs: LocalizedVerb[]) {
   const startSession = useCallback(
     (excludeId?: string): SessionState => {
       const verb = pickRandomVerb(verbs, excludeId);
-      const conjugationKeys = Object.keys(verb.forms).filter((k) => k !== "infinitive");
-
-      return {
-        verb,
-        phase: "infinitive",
-        conjugationQueue: shuffle(conjugationKeys),
-        currentFormKey: null,
-        completedFormKeys: [],
-        feedback: null,
-        attemptId: 0,
-        totalConjugationForms: conjugationKeys.length,
-      };
+      return createSession(verb);
     },
     [verbs],
   );
@@ -129,6 +133,15 @@ export function useSession(verbs: LocalizedVerb[]) {
     setState(startSession(state.verb.id));
   }, [startSession, state.verb.id]);
 
+  const selectVerb = useCallback(
+    (verbId: string) => {
+      const verb = verbs.find((v) => v.id === verbId);
+      if (!verb) return;
+      setState(createSession(verb));
+    },
+    [verbs],
+  );
+
   const skipForm = useCallback(() => {
     setState((prev) => {
       if (prev.phase === "complete" || prev.feedback === "correct") return prev;
@@ -179,6 +192,7 @@ export function useSession(verbs: LocalizedVerb[]) {
     advanceAfterCorrect,
     clearFeedback,
     nextVerb,
+    selectVerb,
     skipForm,
   };
 }

@@ -16,8 +16,13 @@
   "complete": "Alle Formen geschafft!",
   "progress": "{{done}} / {{total}} Formen",
   "language": "Sprache",
+  "menuLabel": "Menü",
   "verbOverviewTitle": "Verfügbare Verben",
   "verbOverviewCount": "{{count}} Verben",
+  "verbOverviewFilteredCount": "{{filtered}} von {{total}} Verben",
+  "verbOverviewSearchPlaceholder": "Verben suchen…",
+  "verbOverviewNoResults": "Keine Verben gefunden.",
+  "verbOverviewHint": "Tippe auf ein Verb, um es zu üben.",
   "close": "Schließen",
   "openOnPealim": "Auf Pealim öffnen"
 }

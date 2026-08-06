@@ -40,20 +40,92 @@ body {
   color: #4a6741;
 }
 
-.lang-select {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.35rem;
-  min-width: 9rem;
+.app-menu {
+  position: relative;
 }
 
-.lang-label {
+.app-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #49b923;
+  border-radius: 8px;
+  background: #fff;
+  color: #2d7a14;
+  cursor: pointer;
+}
+
+.app-menu-trigger:hover {
+  background: #f4faf0;
+}
+
+.app-menu-trigger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(73, 185, 35, 0.2);
+}
+
+.app-menu-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.app-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  min-width: 12rem;
+  padding: 0.35rem;
+  border: 1px solid #d4edc4;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(26, 61, 15, 0.12);
+  z-index: 15;
+}
+
+.app-menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #1a3d0f;
+  font: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.app-menu-item:hover {
+  background: #f4faf0;
+}
+
+.app-menu-item:focus-visible {
+  outline: 2px solid #2d7a14;
+  outline-offset: 1px;
+}
+
+.app-menu-divider {
+  height: 1px;
+  margin: 0.35rem 0;
+  background: #eef8e8;
+}
+
+.app-menu-lang {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem 0.45rem;
+}
+
+.app-menu-lang-label {
   font-size: 0.8rem;
   color: #4a6741;
 }
 
-.lang-menu {
+.app-menu-lang-select {
   appearance: none;
   width: 100%;
   padding: 0.45rem 2rem 0.45rem 0.75rem;
@@ -66,13 +138,13 @@ body {
   cursor: pointer;
 }
 
-.lang-menu:focus {
+.app-menu-lang-select:focus {
   outline: none;
   border-color: #49b923;
   box-shadow: 0 0 0 3px rgba(73, 185, 35, 0.2);
 }
 
-.lang-menu:hover {
+.app-menu-lang-select:hover {
   background-color: #f4faf0;
 }
 
@@ -490,29 +562,6 @@ body {
   text-align: center;
 }
 
-.info-fab {
-  position: fixed;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: none;
-  border-radius: 50%;
-  background: #49b923;
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-style: italic;
-  font-family: Georgia, "Times New Roman", serif;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(73, 185, 35, 0.35);
-  z-index: 10;
-}
-
-.info-fab:hover {
-  background: #3a9419;
-}
-
 .infinitive-with-link {
   display: inline-flex;
   align-items: center;
@@ -598,9 +647,39 @@ body {
 
 .verb-overview-count {
   margin: 0;
-  padding: 0.65rem 1.25rem 0;
   font-size: 0.85rem;
   color: #4a6741;
+}
+
+.verb-overview-toolbar {
+  padding: 0.65rem 1.25rem 0;
+  flex-shrink: 0;
+}
+
+.verb-overview-search {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #49b923;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a3d0f;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.verb-overview-search::placeholder {
+  color: #6b8562;
+}
+
+.verb-overview-search:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(73, 185, 35, 0.2);
+}
+
+.verb-overview-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: #6b8562;
 }
 
 .verb-overview-list {
@@ -608,6 +687,15 @@ body {
   margin: 0;
   padding: 0.75rem 1.25rem 1.25rem;
   overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.verb-overview-empty {
+  padding: 1rem 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b8562;
 }
 
 .verb-overview-item {
@@ -615,8 +703,39 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.65rem 0;
+  padding: 0.35rem 0;
   border-bottom: 1px solid #eef8e8;
+}
+
+.verb-overview-item--active .verb-overview-select {
+  background: #eef8e8;
+  border-color: #b8d9a8;
+}
+
+.verb-overview-select {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.verb-overview-select:hover {
+  background: #f4faf0;
+  border-color: #d4ead0;
+}
+
+.verb-overview-select:focus-visible {
+  outline: 2px solid #2d7a14;
+  outline-offset: 2px;
 }
 
 .verb-overview-item:last-child {

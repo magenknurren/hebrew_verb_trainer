@@ -16,8 +16,13 @@
   "complete": "All forms completed!",
   "progress": "{{done}} / {{total}} forms",
   "language": "Language",
+  "menuLabel": "Menu",
   "verbOverviewTitle": "Available verbs",
   "verbOverviewCount": "{{count}} verbs",
+  "verbOverviewFilteredCount": "{{filtered}} of {{total}} verbs",
+  "verbOverviewSearchPlaceholder": "Search verbs…",
+  "verbOverviewNoResults": "No verbs found.",
+  "verbOverviewHint": "Tap a verb to practice it.",
   "close": "Close",
   "openOnPealim": "Open on Pealim"
 }
