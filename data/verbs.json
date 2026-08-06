@@ -1,0 +1,619 @@
+[
+  {
+    "id": "leehov",
+    "pealimUrl": "https://www.pealim.com/dict/67-leehov/",
+    "root": "א-ה-ב",
+    "binyan": "paal",
+    "forms": {
+      "infinitive": {
+        "he": [
+          "לאהוב",
+          "לאהב"
+        ]
+      },
+      "present_ms": {
+        "he": [
+          "אוהב"
+        ]
+      },
+      "present_fs": {
+        "he": [
+          "אוהבת"
+        ]
+      },
+      "present_mp": {
+        "he": [
+          "אוהבים"
+        ]
+      },
+      "present_fp": {
+        "he": [
+          "אוהבות"
+        ]
+      },
+      "past_1sg": {
+        "he": [
+          "אהבתי"
+        ]
+      },
+      "past_1pl": {
+        "he": [
+          "אהבנו"
+        ]
+      },
+      "past_2ms": {
+        "he": [
+          "אהבת"
+        ]
+      },
+      "past_2fs": {
+        "he": [
+          "אהבת"
+        ]
+      },
+      "past_2mp": {
+        "he": [
+          "אהבתם"
+        ]
+      },
+      "past_2fp": {
+        "he": [
+          "אהבתן"
+        ]
+      },
+      "past_3ms": {
+        "he": [
+          "אהב"
+        ]
+      },
+      "past_3fs": {
+        "he": [
+          "אהבה"
+        ]
+      },
+      "past_3pl": {
+        "he": [
+          "אהבו"
+        ]
+      },
+      "future_1sg": {
+        "he": [
+          "אוהב",
+          "אהב",
+          "אאהב"
+        ]
+      },
+      "future_1pl": {
+        "he": [
+          "נאהב"
+        ]
+      },
+      "future_2ms": {
+        "he": [
+          "תאהב"
+        ]
+      },
+      "future_2fs": {
+        "he": [
+          "תאהבי"
+        ]
+      },
+      "future_2mp": {
+        "he": [
+          "תאהבו"
+        ]
+      },
+      "future_2fp": {
+        "he": [
+          "תאהבנה",
+          "תאהבו"
+        ]
+      },
+      "future_3ms": {
+        "he": [
+          "יאהב"
+        ]
+      },
+      "future_3fs": {
+        "he": [
+          "תאהב"
+        ]
+      },
+      "future_3mp": {
+        "he": [
+          "יאהבו"
+        ]
+      },
+      "future_3fp": {
+        "he": [
+          "תאהבנה",
+          "יאהבו"
+        ]
+      },
+      "imperative_ms": {
+        "he": [
+          "אהב!"
+        ]
+      },
+      "imperative_fs": {
+        "he": [
+          "אהבי!"
+        ]
+      },
+      "imperative_mp": {
+        "he": [
+          "אהבו!"
+        ]
+      },
+      "imperative_fp": {
+        "he": [
+          "אהבנה!",
+          "אהבו!"
+        ]
+      }
+    }
+  },
+  {
+    "id": "leechol",
+    "pealimUrl": "https://www.pealim.com/dict/30-leechol/",
+    "root": "א-כ-ל",
+    "binyan": "paal",
+    "forms": {
+      "infinitive": {
+        "he": [
+          "לאכול",
+          "לאכל"
+        ]
+      },
+      "present_ms": {
+        "he": [
+          "אוכל"
+        ]
+      },
+      "present_fs": {
+        "he": [
+          "אוכלת"
+        ]
+      },
+      "present_mp": {
+        "he": [
+          "אוכלים"
+        ]
+      },
+      "present_fp": {
+        "he": [
+          "אוכלות"
+        ]
+      },
+      "past_1sg": {
+        "he": [
+          "אכלתי"
+        ]
+      },
+      "past_1pl": {
+        "he": [
+          "אכלנו"
+        ]
+      },
+      "past_2ms": {
+        "he": [
+          "אכלת"
+        ]
+      },
+      "past_2fs": {
+        "he": [
+          "אכלת"
+        ]
+      },
+      "past_2mp": {
+        "he": [
+          "אכלתם"
+        ]
+      },
+      "past_2fp": {
+        "he": [
+          "אכלתן"
+        ]
+      },
+      "past_3ms": {
+        "he": [
+          "אכל"
+        ]
+      },
+      "past_3fs": {
+        "he": [
+          "אכלה"
+        ]
+      },
+      "past_3pl": {
+        "he": [
+          "אכלו"
+        ]
+      },
+      "future_1sg": {
+        "he": [
+          "אוכל",
+          "אכל"
+        ]
+      },
+      "future_1pl": {
+        "he": [
+          "נאכל"
+        ]
+      },
+      "future_2ms": {
+        "he": [
+          "תאכל"
+        ]
+      },
+      "future_2fs": {
+        "he": [
+          "תאכלי"
+        ]
+      },
+      "future_2mp": {
+        "he": [
+          "תאכלו"
+        ]
+      },
+      "future_2fp": {
+        "he": [
+          "תאכלנה",
+          "תאכלו"
+        ]
+      },
+      "future_3ms": {
+        "he": [
+          "יאכל"
+        ]
+      },
+      "future_3fs": {
+        "he": [
+          "תאכל"
+        ]
+      },
+      "future_3mp": {
+        "he": [
+          "יאכלו"
+        ]
+      },
+      "future_3fp": {
+        "he": [
+          "תאכלנה",
+          "יאכלו"
+        ]
+      },
+      "imperative_ms": {
+        "he": [
+          "אכול!",
+          "אכל!"
+        ]
+      },
+      "imperative_fs": {
+        "he": [
+          "אכלי!"
+        ]
+      },
+      "imperative_mp": {
+        "he": [
+          "אכלו!"
+        ]
+      },
+      "imperative_fp": {
+        "he": [
+          "אכולנה!",
+          "אכלנה!",
+          "אכלו!"
+        ]
+      }
+    }
+  },
+  {
+    "id": "lavo",
+    "pealimUrl": "https://www.pealim.com/dict/28-lavo/",
+    "root": "ב-ו-א",
+    "binyan": "paal",
+    "forms": {
+      "infinitive": {
+        "he": [
+          "לבוא"
+        ]
+      },
+      "present_ms": {
+        "he": [
+          "בא"
+        ]
+      },
+      "present_fs": {
+        "he": [
+          "באה"
+        ]
+      },
+      "present_mp": {
+        "he": [
+          "באים"
+        ]
+      },
+      "present_fp": {
+        "he": [
+          "באות"
+        ]
+      },
+      "past_1sg": {
+        "he": [
+          "באתי"
+        ]
+      },
+      "past_1pl": {
+        "he": [
+          "באנו"
+        ]
+      },
+      "past_2ms": {
+        "he": [
+          "באת"
+        ]
+      },
+      "past_2fs": {
+        "he": [
+          "באת"
+        ]
+      },
+      "past_2mp": {
+        "he": [
+          "באתם"
+        ]
+      },
+      "past_2fp": {
+        "he": [
+          "באתן"
+        ]
+      },
+      "past_3ms": {
+        "he": [
+          "בא"
+        ]
+      },
+      "past_3fs": {
+        "he": [
+          "באה"
+        ]
+      },
+      "past_3pl": {
+        "he": [
+          "באו"
+        ]
+      },
+      "future_1sg": {
+        "he": [
+          "אבוא"
+        ]
+      },
+      "future_1pl": {
+        "he": [
+          "נבוא"
+        ]
+      },
+      "future_2ms": {
+        "he": [
+          "תבוא"
+        ]
+      },
+      "future_2fs": {
+        "he": [
+          "תבואי"
+        ]
+      },
+      "future_2mp": {
+        "he": [
+          "תבואו"
+        ]
+      },
+      "future_2fp": {
+        "he": [
+          "תבואנה",
+          "תבאנה",
+          "תבואינה",
+          "תבואו"
+        ]
+      },
+      "future_3ms": {
+        "he": [
+          "יבוא"
+        ]
+      },
+      "future_3fs": {
+        "he": [
+          "תבוא"
+        ]
+      },
+      "future_3mp": {
+        "he": [
+          "יבואו"
+        ]
+      },
+      "future_3fp": {
+        "he": [
+          "תבואנה",
+          "תבאנה",
+          "תבואינה",
+          "יבואו"
+        ]
+      },
+      "imperative_ms": {
+        "he": [
+          "בוא!"
+        ]
+      },
+      "imperative_fs": {
+        "he": [
+          "בואי!"
+        ]
+      },
+      "imperative_mp": {
+        "he": [
+          "בואו!"
+        ]
+      },
+      "imperative_fp": {
+        "he": [
+          "בואנה!",
+          "באנה!",
+          "בואינה!",
+          "בואו!"
+        ]
+      }
+    }
+  },
+  {
+    "id": "lehitareach",
+    "pealimUrl": "https://www.pealim.com/dict/155-lehitareach/",
+    "root": "א-ר-ח",
+    "binyan": "paal",
+    "forms": {
+      "infinitive": {
+        "he": [
+          "להתארח"
+        ]
+      },
+      "present_ms": {
+        "he": [
+          "מתארח"
+        ]
+      },
+      "present_fs": {
+        "he": [
+          "מתארחת"
+        ]
+      },
+      "present_mp": {
+        "he": [
+          "מתארחים"
+        ]
+      },
+      "present_fp": {
+        "he": [
+          "מתארחות"
+        ]
+      },
+      "past_1sg": {
+        "he": [
+          "התארחתי"
+        ]
+      },
+      "past_1pl": {
+        "he": [
+          "התארחנו"
+        ]
+      },
+      "past_2ms": {
+        "he": [
+          "התארחת"
+        ]
+      },
+      "past_2fs": {
+        "he": [
+          "התארחת"
+        ]
+      },
+      "past_2mp": {
+        "he": [
+          "התארחתם"
+        ]
+      },
+      "past_2fp": {
+        "he": [
+          "התארחתן"
+        ]
+      },
+      "past_3ms": {
+        "he": [
+          "התארח"
+        ]
+      },
+      "past_3fs": {
+        "he": [
+          "התארחה"
+        ]
+      },
+      "past_3pl": {
+        "he": [
+          "התארחו"
+        ]
+      },
+      "future_1sg": {
+        "he": [
+          "אתארח"
+        ]
+      },
+      "future_1pl": {
+        "he": [
+          "נתארח"
+        ]
+      },
+      "future_2ms": {
+        "he": [
+          "תתארח"
+        ]
+      },
+      "future_2fs": {
+        "he": [
+          "תתארחי"
+        ]
+      },
+      "future_2mp": {
+        "he": [
+          "תתארחו"
+        ]
+      },
+      "future_2fp": {
+        "he": [
+          "תתארחנה",
+          "תתארחו"
+        ]
+      },
+      "future_3ms": {
+        "he": [
+          "יתארח"
+        ]
+      },
+      "future_3fs": {
+        "he": [
+          "תתארח"
+        ]
+      },
+      "future_3mp": {
+        "he": [
+          "יתארחו"
+        ]
+      },
+      "future_3fp": {
+        "he": [
+          "תתארחנה",
+          "יתארחו"
+        ]
+      },
+      "imperative_ms": {
+        "he": [
+          "התארח!"
+        ]
+      },
+      "imperative_fs": {
+        "he": [
+          "התארחי!"
+        ]
+      },
+      "imperative_mp": {
+        "he": [
+          "התארחו!"
+        ]
+      },
+      "imperative_fp": {
+        "he": [
+          "התארחנה!",
+          "התארחו!"
+        ]
+      }
+    }
+  }
+]

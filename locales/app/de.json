@@ -1,0 +1,23 @@
+{
+  "appTitle": "Hebrew Verb Trainer",
+  "directionHint": "Übersetzung → Hebräisch (ohne Nikud)",
+  "infinitivePhase": "Gib den hebräischen Infinitiv ein",
+  "conjugationPhase": "Gib die hebräische Verbform ein",
+  "infinitiveLabel": "Infinitiv",
+  "check": "Prüfen",
+  "showSolution": "Lösung anzeigen",
+  "hideSolution": "Lösung ausblenden",
+  "solution": "Lösung",
+  "nextVerb": "Nächstes Verb",
+  "skipVerb": "Verb überspringen",
+  "skipForm": "Form überspringen",
+  "correct": "Richtig!",
+  "incorrect": "Nicht ganz — versuch es nochmal",
+  "complete": "Alle Formen geschafft!",
+  "progress": "{{done}} / {{total}} Formen",
+  "language": "Sprache",
+  "verbOverviewTitle": "Verfügbare Verben",
+  "verbOverviewCount": "{{count}} Verben",
+  "close": "Schließen",
+  "openOnPealim": "Auf Pealim öffnen"
+}
