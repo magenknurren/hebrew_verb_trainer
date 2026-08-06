@@ -1,20 +1,23 @@
-Ich möchte eine Webanwendung bauen, die mir hebräische verbformen bei bringt. 
-es sollte alle gängigen verbformen enthalten hierfür gibt es die seite https://www.pealim.com/ (nutze diese als quelle für beispielsweise 100 häufige verbformen, wir werden das später erweitern)
+# Project context
 
-die anwendung soll bei jeder session.
-1. das infinitv des verbes anzeigen: "gehen"
-2. ich muss die hebräische form eingeben und diese wird geprüft => wenn falsch, dann nochmal
-3. dann wird mir zufällig eine gebugte verbform angezeitg, zum beispiel "sie gingen" und ich muss die hebräische form korrekt eingeben (ohne nikuds)
-* der hebräisch einfinitiv wird oben drüber angezeigt
-4. wenn form korrekt, dann nächste zufällige form z.B. "er wird gehen"
-5. wiederholen, bis alle formen durch oder "neues/nächstes Verb"
+Build a web app that helps me learn Hebrew verb forms.
 
-wir machen erstmal einen prototypen.
-die hebräischen formen sollen sinnvoll in einem json abgelegt werden.
+Use [pealim.com](https://www.pealim.com/) as the source for verb data (start with common verbs; expand later).
 
-erzeuge ggf. eine bessere projektbeschreibung.
-wir machen erstmal keine nutzerverwaltung oder anmeldung, diese kann aber später noch kommen, um fortschritte, favoriten, vorlieben etc. zu speichern
-hast du noch fragen?
-schlage mir mögliche technologien vor, die sich für das projekt eignen.
-mache erstmal einen plan.
-wie kommst du an den inhalt von pealim ran?
+## Session flow
+
+1. Show the verb infinitive meaning, e.g. “gehen” (to go)
+2. I type the Hebrew form; it is validated — if wrong, try again
+3. A random conjugated form is shown, e.g. “they went”; I type the Hebrew form (without nikud)
+   - the Hebrew infinitive stays visible above
+4. If correct, show the next random form, e.g. “he will go”
+5. Repeat until all forms are done or “next verb”
+
+Start with a prototype. Store Hebrew forms in a sensible JSON structure.
+
+No user accounts or login for now; that may come later for progress, favorites, preferences, etc.
+
+## Open questions (initial planning)
+
+- Technology choices for the project
+- How to fetch content from Pealim

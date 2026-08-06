@@ -1,8 +1,8 @@
 # Hebrew Verb Trainer
 
-Webbasierte Lern-App für hebräische Pa'al-Konjugationen. **Richtung:** Übersetzung (DE/EN) → hebräische Eingabe ohne Nikud.
+Web app for learning Hebrew Pa'al verb conjugations. **Direction:** translation (DE/EN/IT) → Hebrew input without nikud.
 
-## Voraussetzungen
+## Requirements
 
 - [Node.js](https://nodejs.org/) 18+
 
@@ -12,25 +12,25 @@ Webbasierte Lern-App für hebräische Pa'al-Konjugationen. **Richtung:** Überse
 npm install
 ```
 
-## Verben aus Pealim importieren
+## Import verbs from Pealim
 
-Siehe **[docs/ADDING_VERBS.md](docs/ADDING_VERBS.md)** für eine ausführliche Anleitung (Englisch).
+See **[docs/ADDING_VERBS.md](docs/ADDING_VERBS.md)** for a detailed guide.
 
-Kurzfassung: URL + deutsches Lemma in [`data/verb-seed.json`](data/verb-seed.json) eintragen, dann:
+Quick start: add a Pealim URL (and optional German lemma) to [`data/verb-seed.json`](data/verb-seed.json), then:
 
 ```bash
 npm run import:verbs
 ```
 
-Das Skript liest jede Pealim-Seite und schreibt:
-- [`data/verbs.json`](data/verbs.json) — sprachneutral (nur Hebräisch)
-- [`locales/verbs/de.json`](locales/verbs/de.json) — deutsche Prompts
-- [`locales/verbs/en.json`](locales/verbs/en.json) — englische Prompts (von Pealim)
+The script fetches each Pealim page and writes:
+- [`data/verbs.json`](data/verbs.json) — language-neutral (Hebrew only)
+- [`locales/verbs/de.json`](locales/verbs/de.json) — German prompts
+- [`locales/verbs/en.json`](locales/verbs/en.json) — English prompts (from Pealim)
 
-## Neue Sprache hinzufügen (z. B. Italienisch)
+## Add a new language (e.g. Italian)
 
-1. **App-UI:** [`locales/app/it.json`](locales/app/it.json) anlegen (Texte wie in `de.json`)
-2. **Verb-Prompts:** [`locales/verbs/it.json`](locales/verbs/it.json) anlegen:
+1. **App UI:** create [`locales/app/it.json`](locales/app/it.json) (same keys as `de.json`)
+2. **Verb prompts:** create [`locales/verbs/it.json`](locales/verbs/it.json):
    ```json
    {
      "leehov": {
@@ -43,48 +43,48 @@ Das Skript liest jede Pealim-Seite und schreibt:
      }
    }
    ```
-3. **Label im Sprachumschalter:** Eintrag in [`locales/labels.json`](locales/labels.json) ergänzen:
+3. **Language switcher label:** add an entry to [`locales/labels.json`](locales/labels.json):
    ```json
    { "it": "Italiano" }
    ```
 
-Die App erkennt Sprachen automatisch, sobald **sowohl** `locales/app/{code}.json` **als auch** `locales/verbs/{code}.json` existieren.
+The app auto-detects languages once **both** `locales/app/{code}.json` **and** `locales/verbs/{code}.json` exist.
 
-Struktur:
+Structure:
 ```
 locales/
-  app/          ← UI-Texte (Buttons, Meldungen)
-  verbs/        ← Verb-Übersetzungen & Konjugations-Prompts
-  labels.json   ← Anzeigenamen im Sprachumschalter
+  app/          ← UI strings (buttons, messages)
+  verbs/        ← verb translations & conjugation prompts
+  labels.json   ← display names in the language switcher
 data/
-  verbs.json    ← Hebräische Formen (sprachneutral)
+  verbs.json    ← Hebrew forms (language-neutral)
 ```
 
-## App starten (Entwicklung)
+## Development
 
 ```bash
 npm run dev
 ```
 
-Vite zeigt die lokale URL an (standardmäßig **http://localhost:5173**). Im Browser öffnen.
+Vite prints the local URL (default **http://localhost:5173**). Open it in your browser.
 
-## Produktions-Build
+## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-`preview` startet einen lokalen Server für den Build (standardmäßig **http://localhost:4173**).
+`preview` serves the build locally (default **http://localhost:4173**).
 
-Siehe **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)** für eine Anleitung zum Veröffentlichen im Netz.
+See **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)** for publishing the app online.
 
-## Ablauf pro Session
+## Session flow
 
-1. Bedeutung des Infinitivs anzeigen → hebräischen Infinitiv eingeben
-2. Zufällige konjugierte Formen → hebräische Form eingeben (Infinitiv bleibt sichtbar)
-3. Wiederholen bis alle Formen durch oder „Nächstes Verb“
+1. Show the infinitive meaning → type the Hebrew infinitive
+2. Random conjugated forms → type the Hebrew form (infinitive stays visible)
+3. Repeat until all forms are done or skip to the next verb
 
-## Datenquelle
+## Data source
 
-Verbformen werden aus [pealim.com](https://www.pealim.com) importiert und lokal in JSON gespeichert.
+Verb forms are imported from [pealim.com](https://www.pealim.com) and stored locally as JSON.

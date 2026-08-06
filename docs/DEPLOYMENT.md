@@ -1,91 +1,91 @@
 # Deployment
 
-Die App ist eine **statische Webseite** (React + Vite). Es gibt keinen Server — nur HTML, CSS und JavaScript im Ordner `dist/`.
+The app is a **static website** (React + Vite). There is no server — only HTML, CSS, and JavaScript in the `dist/` folder.
 
-## Vorbereitung
+## Preparation
 
-1. Verben lokal importieren (falls nötig):
+1. Import verbs locally (if needed):
 
    ```bash
    npm run import:verbs
    ```
 
-2. Produktions-Build erstellen:
+2. Create a production build:
 
    ```bash
    npm install
    npm run build
    ```
 
-3. Lokal testen (optional):
+3. Test locally (optional):
 
    ```bash
    npm run preview
    ```
 
-   Standard-URL: **http://localhost:4173**
+   Default URL: **http://localhost:4173**
 
-Der Build-Output liegt in **`dist/`** — genau diesen Ordner stellst du online bereit.
+Build output goes to **`dist/`** — that is the folder you publish.
 
 ---
 
-## Option A: Schnell testen (ohne Git)
+## Option A: Quick test (no Git)
 
 **[Netlify Drop](https://app.netlify.com/drop)**
 
-1. `npm run build` ausführen
-2. Den Ordner **`dist`** per Drag & Drop auf die Seite ziehen
-3. Netlify gibt dir sofort eine URL (z. B. `https://random-name.netlify.app`)
+1. Run `npm run build`
+2. Drag and drop the **`dist`** folder onto the page
+3. Netlify gives you a URL immediately (e.g. `https://random-name.netlify.app`)
 
-Für Updates: neu bauen und erneut hochladen.
+For updates: rebuild and upload again.
 
 ---
 
-## Option B: Empfohlen (Git + automatisches Deploy)
+## Option B: Recommended (Git + automatic deploy)
 
-Repository auf GitHub pushen und mit einem Static-Host verbinden. Bei jedem Push wird neu gebaut und veröffentlicht.
+Push the repository to GitHub and connect a static host. Every push rebuilds and publishes the app.
 
-### Build-Einstellungen
+### Build settings
 
-| Einstellung | Wert |
+| Setting | Value |
 |---|---|
 | Build command | `npm run build` |
 | Output directory | `dist` |
 | Install command | `npm install` |
 
-### Anbieter (kostenloser Tarif reicht)
+### Providers (free tier is enough)
 
-- **[Vercel](https://vercel.com)** — Repo verbinden, Einstellungen übernehmen, deployen
-- **[Netlify](https://netlify.com)** — wie Vercel
-- **[Cloudflare Pages](https://pages.cloudflare.com)** — wie Vercel
+- **[Vercel](https://vercel.com)** — connect repo, use settings above, deploy
+- **[Netlify](https://netlify.com)** — same as Vercel
+- **[Cloudflare Pages](https://pages.cloudflare.com)** — same as Vercel
 
-Nach dem ersten Deploy erhältst du eine URL wie `https://hebrew-conjugations.vercel.app`.
+After the first deploy you get a URL like `https://hebrew-verb-trainer.vercel.app`.
 
-### Eigene Domain (optional)
+### Custom domain (optional)
 
-Bei Vercel, Netlify oder Cloudflare kannst du später eine eigene Domain eintragen (DNS-Einstellung beim Domain-Anbieter).
+On Vercel, Netlify, or Cloudflare you can add your own domain later (DNS settings at your domain provider).
 
 ---
 
 ## Option C: GitHub Pages
 
-Funktioniert, erfordert aber eine Anpassung, wenn die URL **nicht** `username.github.io` heißt.
+Works, but requires a config change if the URL is **not** `username.github.io`.
 
 In `vite.config.ts`:
 
 ```ts
 export default defineConfig({
-  base: "/hebrew-conjugations/", // Name deines GitHub-Repos
+  base: "/hebrew_verb_trainer/", // your GitHub repo name
   plugins: [react()],
 });
 ```
 
-Danach Build + Deploy über GitHub Actions oder `gh-pages`-Branch.
+Then build and deploy via GitHub Actions or an `gh-pages` branch.
 
 ---
 
-## Hinweise
+## Notes
 
-- **`npm run import:verbs`** läuft nur lokal. Die JSON-Dateien werden beim Build ins Bundle gepackt — vor dem Deploy importieren, wenn sich Verben geändert haben.
-- **`node_modules/`** und **`dist/`** gehören nicht ins Git (`.gitignore`).
-- Pealim-Links in der App zeigen auf externe Seiten; dafür ist kein Backend nötig.
+- **`npm run import:verbs`** runs locally only. JSON files are bundled at build time — import before deploying if verbs changed.
+- **`node_modules/`** and **`dist/`** should not be committed (see `.gitignore`).
+- Pealim links in the app point to external pages; no backend is required.
